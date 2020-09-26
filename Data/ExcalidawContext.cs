@@ -11,5 +11,6 @@ namespace excalidrawCloud.Data
         }
 
         public DbSet<excalidrawCloud.Models.Excalidraw> Excalidraws { get; set; }
+        public DbSet<excalidrawCloud.Models.ExcalidrawHistory> ExcalidrawHistories { get; set; }
     }
 }

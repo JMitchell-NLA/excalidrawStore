@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using excalidrawCloud.Data;
 using excalidrawCloud.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace excalidrawCloud.Controllers
 {
@@ -29,6 +30,7 @@ namespace excalidrawCloud.Controllers
         }
 
         // GET: api/Excalidraw/5
+        [EnableCors("AnotherPolicy")]
         [HttpGet("{id}")]
         public async Task<ActionResult<Excalidraw>> GetExcalidraw(int id)
         {
@@ -41,10 +43,25 @@ namespace excalidrawCloud.Controllers
 
             return excalidraw;
         }
+        // GET: api/Excalidraw/names
+        [EnableCors("AnotherPolicy")]
+        [HttpGet("names")]
+        public async Task<ActionResult<IEnumerable<CloudDocInfo>>> GetExcalidrawInfos()
+        {
+            var excalidraws = await _context.Excalidraws.ToListAsync();
+            return excalidraws.Select(s => { return new CloudDocInfo(s.ID,s.name,s.lastSaved);}).ToList<CloudDocInfo>();
+            // AND THATS HOW YOU MAP A F***ing list MOFO's 
+
+            // C# really do let you keep things very condensed; It's a language that's much easier
+            // To read than it is to write. 
+            // Time to write it better on the other side.
+        }
+
 
         // PUT: api/Excalidraw/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [EnableCors("AnotherPolicy")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutExcalidraw(int id, Excalidraw excalidraw)
         {
@@ -77,6 +94,7 @@ namespace excalidrawCloud.Controllers
         // POST: api/Excalidraw
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public async Task<ActionResult<Excalidraw>> PostExcalidraw(Excalidraw excalidraw)
         {
