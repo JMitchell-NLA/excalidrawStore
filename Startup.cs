@@ -55,6 +55,7 @@ namespace excalidrawCloud
             }
 
             //app.UseHttpsRedirection();
+            
 
             app.UseRouting();
 
@@ -73,6 +74,8 @@ namespace excalidrawCloud
             {
                 endpoints.MapControllers();
             });
+
+            app.UseStaticFiles();
         }
     }
 }

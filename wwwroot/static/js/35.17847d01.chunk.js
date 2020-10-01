@@ -1,0 +1,2 @@
+(this.webpackJsonpundefined=this.webpackJsonpundefined||[]).push([[35],{170:function(e,n,i){"use strict";i.r(n),n.default=async(e={})=>new Promise(n=>{const i=document.createElement("input");i.type="file";const t=[...e.mimeTypes?e.mimeTypes:[],e.extensions?e.extensions.map(e=>"."+e):[]].join();i.multiple=e.multiple||!1,i.accept=t||"*/*",i.addEventListener("change",()=>{n(i.multiple?i.files:i.files[0])}),i.click()})}}]);
+//# sourceMappingURL=35.17847d01.chunk.js.map
