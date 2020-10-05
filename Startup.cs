@@ -39,6 +39,9 @@ namespace excalidrawCloud
                         builder.WithOrigins("http://localhost:3000")
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
+                        builder.WithOrigins("http://localhost:5000")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
                     });
             });
 
