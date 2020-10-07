@@ -7,7 +7,7 @@ read msg
 git add -A;
 git commit -a -m "$msg";
 git push;
-ssh root@kooks-does.net cd /cherry/excalidrawStore && git pull
+ssh root@kooks-does.net "cd /cherry/excalidrawStore && git pull"
 echo "all done!"
 
 
