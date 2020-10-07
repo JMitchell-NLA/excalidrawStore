@@ -1,2 +1,0 @@
-(this.webpackJsonpundefined=this.webpackJsonpundefined||[]).push([[39],{172:function(e,i,t){"use strict";t.r(i),i.default=async(e,i={},t=null)=>{i.fileName=i.fileName||"Untitled",t=t||await window.chooseFileSystemEntries({type:"save-file",accepts:[{description:i.description||"",mimeTypes:[e.type],extensions:i.extensions||[""]}]});const s=await t.createWritable();return await s.write(e),await s.close(),t}}}]);
-//# sourceMappingURL=39.41897fcf.chunk.js.map
