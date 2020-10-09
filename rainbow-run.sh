@@ -1,4 +1,4 @@
-ssh -t root@kooks-does.net "cd /cherry/excalidrawStore && dotnet run"
+ssh -t root@kooks-does.net "sudo systemctl stop kestral-excalidraw.service && sudo systemctl start kestral-excalidraw.service && sudo systemctl status kestral-excalidraw.service"
 
 #  _____ _                        _        _ _  
 # |_   _| |                      | |      | | | 
