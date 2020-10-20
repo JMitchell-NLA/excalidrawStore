@@ -65,7 +65,7 @@ namespace excalidrawCloud.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutExcalidraw(int id, Excalidraw excalidraw)
         {
-            Excalidraw og = await _context.Excalidraws.FindAsync(id);
+            Excalidraw og = _context.Excalidraws.AsNoTracking().ToList().First(s => s.ID == id);
             
             // Return a bad request if the ID is invalid, or if the date of document being 
             // put is earlier than the one currently being stored there. 
