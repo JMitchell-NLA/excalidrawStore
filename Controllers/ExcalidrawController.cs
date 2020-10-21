@@ -69,7 +69,7 @@ namespace excalidrawCloud.Controllers
             
             // Return a bad request if the ID is invalid, or if the date of document being 
             // put is earlier than the one currently being stored there. 
-            if (id != excalidraw.ID && (excalidraw.lastSaved.CompareTo(og.lastSaved) < 0 ))
+            if (id != excalidraw.ID || (excalidraw.lastSaved.CompareTo(og.lastSaved) < 0 ))
             {
                 return BadRequest();
             }
